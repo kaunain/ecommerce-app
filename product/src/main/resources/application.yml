@@ -10,4 +10,4 @@ spring:
       uri: mongodb+srv://${user}:${pass}@${cluster}.ov5gr.mongodb.net/?retryWrites=true&w=majority
       database: test
 
-
+# ./mvnw spring-boot:run -Dspring-boot.run.arguments="--user=your_user --pass=your_pass --cluster=your_cluster"

@@ -1,6 +1,7 @@
 package com.itechf.product;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,8 @@ public class ProductController {
 
     @RequestMapping("/product/{id}")
     public ProductItem getProductItem(@PathVariable Integer id) {
-        ProductItem pi = productItemRepository.findItemById(id);
-        return pi;
+        Optional<ProductItem> pi = productItemRepository.findById(id);
+        return pi.get();
     }
 
     @RequestMapping("/all")

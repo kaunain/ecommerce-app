@@ -4,3 +4,10 @@ server:
 spring:
   application:
     name: product
+
+  data:
+    mongodb:
+      uri: mongodb+srv://${user}:${pass}@${cluster}.ov5gr.mongodb.net/?retryWrites=true&w=majority
+      database: test
+
+

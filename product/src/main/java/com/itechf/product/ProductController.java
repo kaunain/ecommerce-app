@@ -11,17 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
     @Autowired
-    private ProductRepository dao;
+    private ProductItemRepository productItemRepository;
 
     @RequestMapping("/product/{id}")
     public ProductItem getProductItem(@PathVariable Integer id) {
-        ProductItem pi = dao.getProductItem(id);
+        ProductItem pi = productItemRepository.findItemById(id);
         return pi;
     }
 
     @RequestMapping("/all")
     public List<ProductItem> getProductItems() {
-        return dao.getAllProductItem();
+        return productItemRepository.findAll();
+    }
+
+    @RequestMapping("/init")
+    public List<ProductItem> saveInit() {
+        List<ProductItem> productList = List.of(
+            new ProductItem(1, "Book", 1, "Some Book"), 
+            new ProductItem(2, "Table", 2, "Simple Table"),
+            new ProductItem(3, "Chair", 3, "Sitting Chair")
+        );
+        return productItemRepository.saveAll(productList);
     }
 
     @RequestMapping("/")

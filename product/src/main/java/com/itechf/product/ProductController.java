@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,18 +14,18 @@ public class ProductController {
     @Autowired
     private ProductItemRepository productItemRepository;
 
-    @RequestMapping("/product/{id}")
+    @GetMapping("/product/{id}")
     public ProductItem getProductItem(@PathVariable Integer id) {
         Optional<ProductItem> pi = productItemRepository.findById(id);
         return pi.get();
     }
 
-    @RequestMapping("/all")
+    @GetMapping("/all")
     public List<ProductItem> getProductItems() {
         return productItemRepository.findAll();
     }
 
-    @RequestMapping("/init")
+    @GetMapping("/init")
     public List<ProductItem> saveInit() {
         List<ProductItem> productList = List.of(
             new ProductItem(1, "Book", 1, "Some Book"), 
@@ -35,7 +35,7 @@ public class ProductController {
         return productItemRepository.saveAll(productList);
     }
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home() {
         return "ProductItem Service up and Running";
     }

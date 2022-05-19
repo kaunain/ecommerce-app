@@ -1,6 +1,26 @@
 # ecommerce-app
 eCommerce complete Web Application with nextjs and spring boot micro service
 
+## Steps to run this project
+
+Use below steps to run this project
+
+- git clone repository
+- create free or paid user on [Mongo DB](https://cloud.mongodb.com/)
+- generate user/password for mongo DB
+- cd project dir
+- run for eureka service ./mvnw spring-boot:run
+- run for product service ./mvnw spring-boot:run -Dspring-boot.run.arguments="--user=<mongo user> --pass=<mongo password> --cluster=<mongo cluster>"
+
+
+## Technology Used
+
+We are using below Technologies
+
+- spring-boot microservice
+- mongodb
+- swagger
+- eureka discovery services
 
 ## Eureka Discovery Service
 

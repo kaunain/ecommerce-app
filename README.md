@@ -9,9 +9,8 @@ Use below steps to run this project
 - create free or paid user on [Mongo DB](https://cloud.mongodb.com/)
 - generate user/password for mongo DB
 - cd project dir
-- run for eureka service ./mvnw spring-boot:run
-- run for product service ./mvnw spring-boot:run -Dspring-boot.run.arguments="--user=<mongo user> --pass=<mongo password> --cluster=<mongo cluster>"
-
+- run for eureka service ``` ./mvnw spring-boot:run ```
+- run for product service ``` ./mvnw spring-boot:run -Dspring-boot.run.arguments="--user=<mongo user> --pass=<mongo password> --cluster=<mongo cluster>" ```
 
 ## Technology Used
 

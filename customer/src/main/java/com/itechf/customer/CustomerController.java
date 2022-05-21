@@ -31,7 +31,7 @@ public class CustomerController {
 
     @GetMapping("/all")
     public List<CustomerBean> getCustomerBeans() {
-        return customerRepository.findAll();
+        return (List<CustomerBean>) customerRepository.findAll();
     }
 
     @PostMapping("/save")

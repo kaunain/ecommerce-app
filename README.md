@@ -5,7 +5,7 @@ eCommerce complete Web Application with nextjs and spring boot micro service
 
 Use below steps to run this project
 
-- git clone repository
+- ``` git clone https://github.com/kaunain/ecommerce-app.git ```
 - create free or paid user on [Mongo DB](https://cloud.mongodb.com/)
 - generate user/password for mongo DB
 - cd project dir

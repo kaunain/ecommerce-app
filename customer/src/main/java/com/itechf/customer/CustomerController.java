@@ -20,7 +20,7 @@ public class CustomerController {
     @GetMapping("/customer/{id}")
     public CustomerBean getCustomerBean(@PathVariable Integer id) {
         Optional<CustomerBean> pi = customerRepository.findById(id);
-        return pi.get();
+        return pi.isPresent() ? pi.get() : null;
     }
 
     @DeleteMapping("/customer/{id}")
@@ -52,6 +52,7 @@ public class CustomerController {
             new CustomerBean(2, "Table", 2, "Simple Table"),
             new CustomerBean(3, "Chair", 3, "Sitting Chair")
             );
+        System.out.println("Key : " + key);
         if("123123".equals(key)){
             customerRepository.saveAll(CustomerList);
             flag = true;

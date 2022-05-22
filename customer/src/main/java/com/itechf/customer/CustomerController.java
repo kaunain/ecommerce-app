@@ -20,7 +20,8 @@ public class CustomerController {
     @GetMapping("/customer/{id}")
     public CustomerBean getCustomerBean(@PathVariable Integer id) {
         Optional<CustomerBean> pi = customerRepository.findById(id);
-        return pi.isPresent() ? pi.get() : null;
+        System.out.println(pi);
+        return pi.orElse(new CustomerBean());
     }
 
     @DeleteMapping("/customer/{id}")
